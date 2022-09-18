@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c6bda0-f54c-4ff9-ab1c-bc40c14316c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database_sql/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database_sql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database_sql/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/css/pure-min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/initdb/world.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +31,42 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/wudong/repo/compose-postgrest/database_sql/schema.sql",
     "nodejs_package_manager_path": "npm"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "postgresql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "3024f9b4-0483-4354-914f-8d54c25faa0c/database/\"postgres\"/schema/\"public\""
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.swagger-ui: Compose Deployment">
+  <component name="RunManager" selected="Database Script.schema.sql">
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/database_sql/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3024f9b4-0483-4354-914f-8d54c25faa0c" namespace="database/&quot;postgres&quot;/schema/&quot;public&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.pgadmin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="pgadmin" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
         </settings>
       </deployment>
@@ -64,10 +87,21 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.swagger-ui: Compose Deployment" />
+        <item itemvalue="Database Script.schema.sql" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.pgadmin: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.swagger-ui: Compose Deployment" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SQLScriptSettings">
+    <option name="matrix">
+      <map>
+        <entry key="POSTGRES.CreateComplete" value="UseSurrogates=1, CreateOrReplace=1, Owner=1, Grants=1" />
+      </map>
+    </option>
+    <option name="outputLayout" value="File per object by schema.groovy" />
+    <option name="outputPath" value="$PROJECT_DIR$/database_sql" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,11 +114,25 @@
       <workItem from="1663186109949" duration="488000" />
       <workItem from="1663186662359" duration="61000" />
       <workItem from="1663187100534" duration="378000" />
-      <workItem from="1663187487638" duration="4136000" />
+      <workItem from="1663187487638" duration="24662000" />
     </task>
+    <task id="LOCAL-00001" summary="Database">
+      <created>1663191697599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663191697599</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database" />
   </component>
 </project>

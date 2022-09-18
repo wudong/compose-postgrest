@@ -74,9 +74,26 @@ services:
       - API_URL=http://localhost:3000/
     restart: always
 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    networks:
+      - postgrest-backend
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PG_ADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PG_ADMIN_PASSWORD}
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
 networks:
   postgrest-backend:
     driver: bridge
 
 volumes:
   pgdata:
+    external: true
+  pgadmin-data:
+    external: true
