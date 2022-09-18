@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c6bda0-f54c-4ff9-ab1c-bc40c14316c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/database_sql/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database_sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database_sql/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +108,7 @@
       <workItem from="1663186109949" duration="488000" />
       <workItem from="1663186662359" duration="61000" />
       <workItem from="1663187100534" duration="378000" />
-      <workItem from="1663187487638" duration="24662000" />
+      <workItem from="1663187487638" duration="24740000" />
     </task>
     <task id="LOCAL-00001" summary="Database">
       <created>1663191697599</created>
@@ -123,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663191697599</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Database">
+      <created>1663512343154</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663512343154</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

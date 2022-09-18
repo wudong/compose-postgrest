@@ -1,20 +1,11 @@
-drop type if exists gender;
 create type gender as enum ('male', 'female');
 
-drop type if exists age_restriction;
-create type age_restriction as enum ('open', 'u11', 'u13', 'u15','u17', 'u19', 'u21', 'o40', 'o50', 'o60', 'o70', 'o80');
-
-drop type if exists gender_restriction;
 create type gender_restriction as enum ('male', 'female', 'mix');
 
-drop type if exists competition_type;
 create type competition_type as enum ('single', 'double', 'team');
 
+create type age_restriction as enum ('open', 'u11', 'u13', 'u15', 'u17', 'u19', 'u21', 'o40', 'o50', 'o60', 'o70', 'o80');
 
-drop type if exists club_role;
-create type club_role as enum ('owner', 'volunteer');
-
-drop table if exists venue;
 create table venue
 (
     id integer generated always as identity
@@ -22,7 +13,6 @@ create table venue
             primary key
 );
 
-drop table if exists "user";
 create table "user"
 (
     id integer generated always as identity
@@ -30,7 +20,6 @@ create table "user"
             primary key
 );
 
-drop table if exists player;
 create table player
 (
     id integer generated always as identity
@@ -38,7 +27,13 @@ create table player
             primary key
 );
 
-drop table if exists team;
+create table club
+(
+    id integer generated always as identity
+        constraint club_pkey
+            primary key
+);
+
 create table team
 (
     id          integer generated always as identity
@@ -51,29 +46,6 @@ create table team
             references club
 );
 
-drop table if exists team_player;
-create table team_player
-(
-    team integer not null
-        constraint team_player_team_id_fkey
-            references team,
-    player integer not null
-        constraint team_player_player_id_fkey
-            references player,
-    constraint team_player_pkey
-        primary key (team, player),
-    is_captain boolean not null default false
-);
-
-drop table if exists club;
-create table club
-(
-    id integer generated always as identity
-        constraint club_pkey
-            primary key
-);
-
-drop table if exists event;
 create table event
 (
     id             integer generated always as identity
@@ -90,7 +62,6 @@ create table event
     ranking_level  integer
 );
 
-drop table if exists competition;
 create table competition
 (
     id                 integer generated always as identity
@@ -109,27 +80,6 @@ create table competition
     rank_restriction   integer
 );
 
-
-drop table if exists competition_entry;
-create table competition_entry
-(
-    competition integer not null
-        constraint competition_entry_competition_id_fkey
-            references competition,
-    player      integer
-        constraint competition_entry_player_id_fkey
-            references player,
-    team        integer
-        constraint competition_entry_team_id_fkey
-            references team,
-    is_team boolean not null,
-    paid_time timestamptz,
-    constraint competition_entry_pkey
-        primary key (competition, player, team),
-    constraint participants_is_team check ((is_team and (team is not null)) or ((not is_team) and (player is not null)))
-);
-
-drop table if exists round;
 create table round
 (
     id          integer generated always as identity
@@ -144,25 +94,22 @@ create table round
     event       integer
         constraint round_event_fk
             references event,
-    name        text,
-    start_time  timestamptz,
-    finish_time timestamptz
+    name        text
 );
 
-drop table if exists match;
 create table match
 (
     number      smallint  default 1               not null,
     round       integer                           not null
         constraint match_round_fk
             references round,
-    competition integer not null
+    competition integer                           not null
         constraint round_competition_fk
             references competition,
-    event       integer not null
+    event       integer                           not null
         constraint round_event_fk
             references event,
-    is_team     boolean                          not null,
+    is_team     boolean                           not null,
     start_time  timestamp with time zone,
     finish_time timestamp with time zone,
     score_one   integer,
@@ -185,5 +132,37 @@ create table match
     constraint check_match_is_team
         check ((is_team AND ((team_one IS NOT NULL) AND (team_two IS NOT NULL))) OR
                ((NOT is_team) AND ((player_one IS NOT NULL) AND (player_two IS NOT NULL))))
+);
+
+create table team_player
+(
+    team       integer               not null
+        constraint team_player_team_id_fkey
+            references team,
+    player     integer               not null
+        constraint team_player_player_id_fkey
+            references player,
+    is_captain boolean default false not null,
+    constraint team_player_pkey
+        primary key (team, player)
+);
+
+create table competition_entry
+(
+    competition integer not null
+        constraint competition_entry_competition_id_fkey
+            references competition,
+    player      integer not null
+        constraint competition_entry_player_id_fkey
+            references player,
+    team        integer not null
+        constraint competition_entry_team_id_fkey
+            references team,
+    is_team     boolean not null,
+    paid_time   timestamp with time zone,
+    constraint competition_entry_pkey
+        primary key (competition, player, team),
+    constraint participants_is_team
+        check ((is_team AND (team IS NOT NULL)) OR ((NOT is_team) AND (player IS NOT NULL)))
 );
 
