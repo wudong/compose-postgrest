@@ -8,30 +8,48 @@ create type age_restriction as enum ('open', 'u11', 'u13', 'u15', 'u17', 'u19', 
 
 create table venue
 (
-    id integer generated always as identity
+    id          integer generated always as identity
         constraint venue_pkey
-            primary key
-);
-
-create table "user"
-(
-    id integer generated always as identity
-        constraint user_pkey
-            primary key
+            primary key,
+    name        text not null,
+    description text,
+    location    point,
+    phone       text
 );
 
 create table player
 (
-    id integer generated always as identity
+    id      integer generated always as identity
         constraint player_pkey
-            primary key
+            primary key,
+    name    text not null,
+    gender  gender,
+    dob     date,
+    ranking integer
+);
+
+create table "user"
+(
+    id     integer generated always as identity
+        constraint user_pkey
+            primary key,
+    player integer
+        constraint user_player_fk
+            references player
 );
 
 create table club
 (
-    id integer generated always as identity
+    id      integer generated always as identity
         constraint club_pkey
-            primary key
+            primary key,
+    name    text not null,
+    venue   integer
+        constraint club_venue_fk
+            references venue,
+    contact integer
+        constraint club_contact
+            references "user"
 );
 
 create table team
@@ -165,4 +183,3 @@ create table competition_entry
     constraint participants_is_team
         check ((is_team AND (team IS NOT NULL)) OR ((NOT is_team) AND (player IS NOT NULL)))
 );
-
