@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c6bda0-f54c-4ff9-ab1c-bc40c14316c2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3024f9b4-0483-4354-914f-8d54c25faa0c/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database_sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database_sql/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,23 +24,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/wudong/repo/compose-postgrest/database_sql/schema.sql",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/wudong/repo/compose-postgrest/database_sql/schema.sql&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "3024f9b4-0483-4354-914f-8d54c25faa0c/database/\"postgres\"/schema/\"public\""
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;3024f9b4-0483-4354-914f-8d54c25faa0c/database/\&quot;postgres\&quot;/schema/\&quot;public\&quot;&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Docker.docker-compose.yml.postgrest-demo: Compose Deployment">
     <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/database_sql/schema.sql" />
@@ -129,7 +126,8 @@
       <workItem from="1663186109949" duration="488000" />
       <workItem from="1663186662359" duration="61000" />
       <workItem from="1663187100534" duration="378000" />
-      <workItem from="1663187487638" duration="27848000" />
+      <workItem from="1663187487638" duration="31666000" />
+      <workItem from="1663589174840" duration="6369000" />
     </task>
     <task id="LOCAL-00001" summary="Database">
       <created>1663191697599</created>
@@ -152,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663512418375</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Database">
+      <created>1663582867199</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663582867199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

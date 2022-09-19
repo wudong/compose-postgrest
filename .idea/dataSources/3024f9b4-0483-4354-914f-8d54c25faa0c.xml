@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>771</IntrospectionStateNumber>
+      <IntrospectionStateNumber>959</IntrospectionStateNumber>
       <ServerVersion>13.8</ServerVersion>
       <StartupTime>1663504859</StartupTime>
       <TimeZones>true ACDT
@@ -803,7 +803,7 @@ true posixrules
 13173||10|C|G
 13173||-9223372036854775808|U|G
 13173||10|U|G</Grants>
-      <IntrospectionStateNumber>771</IntrospectionStateNumber>
+      <IntrospectionStateNumber>959</IntrospectionStateNumber>
       <ObjectId>13457</ObjectId>
       <Relations>sequence|table|16511|16513|1
 sequence|table|16518|16520|1
@@ -4218,15 +4218,15 @@ sequence|table|16436|16438|1
 16930||10|t|G
 16930||10|D|G
 16930||10|w|G
-16977||10|d|G
-16977||10|a|G
-16977||10|x|G
-16977||10|r|G
-16977||16384|r|G
-16977||10|t|G
-16977||10|D|G
-16977||10|w|G</Grants>
-      <IntrospectionStateNumber>771</IntrospectionStateNumber>
+18138||10|d|G
+18138||10|a|G
+18138||10|x|G
+18138||10|r|G
+18138||16384|r|G
+18138||10|t|G
+18138||10|D|G
+18138||10|w|G</Grants>
+      <IntrospectionStateNumber>959</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>487</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4279,121 +4279,135 @@ mix</Labels>
       <SubKind>enum</SubKind>
       <OwnerName>postgres</OwnerName>
     </object-type>
-    <sequence id="258" parent="253" name="club_id_seq">
+    <routine id="258" parent="253" name="competition_entry_insert_trigger_fn">
+      <ObjectId>17038</ObjectId>
+      <PgRoutineKind>pg-trigger</PgRoutineKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <Rows>0.0</Rows>
+      <SourceTextLength>549</SourceTextLength>
+      <StateNumber>912</StateNumber>
+      <LanguageName>plpgsql</LanguageName>
+      <OwnerName>postgres</OwnerName>
+    </routine>
+    <sequence id="259" parent="253" name="club_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16518</ObjectId>
       <StateNumber>533</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="259" parent="253" name="competition_id_seq">
+    <sequence id="260" parent="253" name="competition_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16501</ObjectId>
       <StateNumber>530</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="260" parent="253" name="event_id_seq">
+    <sequence id="261" parent="253" name="event_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16582</ObjectId>
       <StateNumber>559</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="261" parent="253" name="player_id_seq">
+    <sequence id="262" parent="253" name="player_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16436</ObjectId>
       <StateNumber>502</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="262" parent="253" name="round_id_seq">
+    <sequence id="263" parent="253" name="round_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16589</ObjectId>
       <StateNumber>561</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="263" parent="253" name="team_id_seq">
+    <sequence id="264" parent="253" name="team_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16511</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="264" parent="253" name="user_id_seq">
+    <sequence id="265" parent="253" name="user_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16429</ObjectId>
       <StateNumber>501</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="265" parent="253" name="venue_id_seq">
+    <sequence id="266" parent="253" name="venue_id_seq">
       <DataType>integer|0s</DataType>
       <ObjectId>16389</ObjectId>
       <StateNumber>494</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="266" parent="253" name="club">
+    <table id="267" parent="253" name="club">
       <ObjectId>16520</ObjectId>
       <StateNumber>726</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="267" parent="253" name="competition">
+    <table id="268" parent="253" name="competition">
       <ObjectId>16503</ObjectId>
-      <StateNumber>679</StateNumber>
+      <StateNumber>774</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="268" parent="253" name="competition_entry">
-      <ObjectId>16977</ObjectId>
-      <StateNumber>653</StateNumber>
+    <table id="269" parent="253" name="competition_entry">
+      <ObjectId>18138</ObjectId>
+      <StateNumber>943</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="269" parent="253" name="event">
+    <table id="270" parent="253" name="event">
       <ObjectId>16584</ObjectId>
       <StateNumber>711</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="270" parent="253" name="match">
+    <table id="271" parent="253" name="match">
       <ObjectId>16867</ObjectId>
       <StateNumber>609</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="271" parent="253" name="player">
+    <table id="272" parent="253" name="player">
       <ObjectId>16438</ObjectId>
       <StateNumber>761</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="272" parent="253" name="round">
+    <table id="273" parent="253" name="round">
       <ObjectId>16591</ObjectId>
       <StateNumber>567</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="273" parent="253" name="team">
+    <table id="274" parent="253" name="team">
       <ObjectId>16513</ObjectId>
       <StateNumber>633</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="274" parent="253" name="team_player">
+    <table id="275" parent="253" name="team_player">
       <ObjectId>16930</ObjectId>
       <StateNumber>619</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="275" parent="253" name="user">
+    <table id="276" parent="253" name="user">
       <ObjectId>16431</ObjectId>
       <StateNumber>767</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="276" parent="253" name="venue">
+    <table id="277" parent="253" name="venue">
       <ObjectId>16391</ObjectId>
       <StateNumber>744</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="277" parent="266" name="id">
+    <argument id="278" parent="258">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
+    </argument>
+    <column id="279" parent="267" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -4401,26 +4415,26 @@ mix</Labels>
       <StateNumber>533</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="278" parent="266" name="name">
+    <column id="280" parent="267" name="name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>720</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="279" parent="266" name="venue">
+    <column id="281" parent="267" name="venue">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>723</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="280" parent="266" name="contact">
+    <column id="282" parent="267" name="contact">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>726</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="281" parent="266" name="club_venue_fk">
+    <foreign-key id="283" parent="267" name="club_venue_fk">
       <ColNames>venue</ColNames>
       <ObjectId>17022</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4430,7 +4444,7 @@ mix</Labels>
       <RefTableName>venue</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="282" parent="266" name="club_contact">
+    <foreign-key id="284" parent="267" name="club_contact">
       <ColNames>contact</ColNames>
       <ObjectId>17027</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4440,7 +4454,7 @@ mix</Labels>
       <RefTableName>user</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="283" parent="266" name="club_pkey">
+    <index id="285" parent="267" name="club_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16523</ObjectId>
@@ -4449,14 +4463,14 @@ mix</Labels>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="284" parent="266" name="club_pkey">
+    <key id="286" parent="267" name="club_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16524</ObjectId>
       <Primary>1</Primary>
       <StateNumber>533</StateNumber>
       <UnderlyingIndexId>16523</UnderlyingIndexId>
     </key>
-    <column id="285" parent="267" name="id">
+    <column id="287" parent="268" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -4464,27 +4478,27 @@ mix</Labels>
       <StateNumber>530</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="286" parent="267" name="type">
+    <column id="288" parent="268" name="type">
       <DataType>competition_type|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>530</StateNumber>
       <TypeId>16422</TypeId>
     </column>
-    <column id="287" parent="267" name="name">
+    <column id="289" parent="268" name="name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>530</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="288" parent="267" name="description">
+    <column id="290" parent="268" name="description">
       <DataType>text|0s</DataType>
       <Position>4</Position>
       <StateNumber>573</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="289" parent="267" name="is_team">
+    <column id="291" parent="268" name="is_team">
       <DataType>boolean|0s</DataType>
       <DefaultExpression>false</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4492,7 +4506,7 @@ mix</Labels>
       <StateNumber>564</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="290" parent="267" name="fee">
+    <column id="292" parent="268" name="fee">
       <DataType>money|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4500,7 +4514,7 @@ mix</Labels>
       <StateNumber>682</StateNumber>
       <TypeId>790</TypeId>
     </column>
-    <column id="291" parent="267" name="age_restriction">
+    <column id="293" parent="268" name="age_restriction">
       <DataType>age_restriction|0s</DataType>
       <DefaultExpression>&apos;open&apos;::age_restriction</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4508,26 +4522,34 @@ mix</Labels>
       <StateNumber>667</StateNumber>
       <TypeId>16613</TypeId>
     </column>
-    <column id="292" parent="267" name="gender_restriction">
+    <column id="294" parent="268" name="gender_restriction">
       <DataType>gender_restriction|0s</DataType>
       <DefaultExpression>&apos;mix&apos;::gender_restriction</DefaultExpression>
       <Position>8</Position>
       <StateNumber>670</StateNumber>
       <TypeId>16414</TypeId>
     </column>
-    <column id="293" parent="267" name="event">
+    <column id="295" parent="268" name="event">
       <DataType>integer|0s</DataType>
       <Position>9</Position>
       <StateNumber>673</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="294" parent="267" name="rank_restriction">
+    <column id="296" parent="268" name="rank_restriction">
       <DataType>integer|0s</DataType>
       <Position>10</Position>
       <StateNumber>679</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="295" parent="267" name="competition_event_fk">
+    <column id="297" parent="268" name="entry_limit">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>11</Position>
+      <StateNumber>777</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="298" parent="268" name="competition_event_fk">
       <ColNames>event</ColNames>
       <ObjectId>17000</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4537,7 +4559,7 @@ mix</Labels>
       <RefTableName>event</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="296" parent="267" name="competition_pkey">
+    <index id="299" parent="268" name="competition_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16509</ObjectId>
@@ -4546,104 +4568,134 @@ mix</Labels>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="297" parent="267" name="competition_pkey">
+    <key id="300" parent="268" name="competition_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16510</ObjectId>
       <Primary>1</Primary>
       <StateNumber>530</StateNumber>
       <UnderlyingIndexId>16509</UnderlyingIndexId>
     </key>
-    <check id="298" parent="268" name="participants_is_team">
+    <check id="301" parent="269" name="participants_is_team">
       <ColNames>is_team
 team
 player</ColNames>
-      <ObjectId>16980</ObjectId>
-      <Predicate>(is_team AND (team IS NOT NULL)) OR ((NOT is_team) AND (player IS NOT NULL))</Predicate>
-      <StateNumber>653</StateNumber>
+      <ObjectId>18143</ObjectId>
+      <Predicate>(is_team AND ((team IS NOT NULL) AND (player IS NULL))) OR ((NOT is_team) AND ((player IS NOT NULL) AND (team IS NULL)))</Predicate>
+      <StateNumber>943</StateNumber>
     </check>
-    <column id="299" parent="268" name="competition">
+    <column id="302" parent="269" name="competition">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="300" parent="268" name="player">
+    <column id="303" parent="269" name="player">
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="301" parent="268" name="team">
+    <column id="304" parent="269" name="team">
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="302" parent="268" name="is_team">
+    <column id="305" parent="269" name="is_team">
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="303" parent="268" name="paid_time">
+    <column id="306" parent="269" name="paid_time">
       <DataType>timestamp with time zone|0s</DataType>
       <Position>5</Position>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <foreign-key id="304" parent="268" name="competition_entry_competition_id_fkey">
+    <column id="307" parent="269" name="entry_number">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StateNumber>943</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="308" parent="269" name="withdrawn">
+      <DataType>boolean|0s</DataType>
+      <DefaultExpression>false</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>943</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <foreign-key id="309" parent="269" name="competition_entry_competition_id_fkey">
       <ColNames>competition</ColNames>
-      <ObjectId>16983</ObjectId>
+      <ObjectId>18146</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <RefTableId>16503</RefTableId>
       <RefTableName>competition</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="305" parent="268" name="competition_entry_player_id_fkey">
+    <foreign-key id="310" parent="269" name="competition_entry_player_id_fkey">
       <ColNames>player</ColNames>
-      <ObjectId>16988</ObjectId>
+      <ObjectId>18151</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <RefTableId>16438</RefTableId>
       <RefTableName>player</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="306" parent="268" name="competition_entry_team_id_fkey">
+    <foreign-key id="311" parent="269" name="competition_entry_team_id_fkey">
       <ColNames>team</ColNames>
-      <ObjectId>16993</ObjectId>
+      <ObjectId>18156</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <RefTableId>16513</RefTableId>
       <RefTableName>team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="307" parent="268" name="competition_entry_pkey">
+    <index id="312" parent="269" name="competition_entry_pkey">
       <ColNames>competition
-player
-team</ColNames>
+entry_number</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16981</ObjectId>
+      <ObjectId>18144</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>653</StateNumber>
+      <StateNumber>943</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="308" parent="268" name="competition_entry_pkey">
+    <index id="313" parent="269" name="competition_entry_unique_entry_idx">
+      <ColNames>competition
+&#x1b;COALESCE(player, &apos;-1&apos;::integer)
+&#x1b;COALESCE(team, &apos;-1&apos;::integer)</ColNames>
+      <FunctionBased>1</FunctionBased>
+      <ObjectId>18162</ObjectId>
+      <StateNumber>949</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="314" parent="269" name="competition_entry_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16982</ObjectId>
+      <ObjectId>18145</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>653</StateNumber>
-      <UnderlyingIndexId>16981</UnderlyingIndexId>
+      <StateNumber>943</StateNumber>
+      <UnderlyingIndexId>18144</UnderlyingIndexId>
     </key>
-    <column id="309" parent="269" name="id">
+    <trigger id="315" parent="269" name="competition_entry_insert_trigger">
+      <Events>I</Events>
+      <ObjectId>18163</ObjectId>
+      <StateNumber>958</StateNumber>
+      <Turn>before-row</Turn>
+      <CallRoutineId>17038</CallRoutineId>
+    </trigger>
+    <column id="316" parent="270" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -4651,7 +4703,7 @@ team</ColNames>
       <StateNumber>559</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="310" parent="269" name="fee">
+    <column id="317" parent="270" name="fee">
       <DataType>money|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4659,46 +4711,46 @@ team</ColNames>
       <StateNumber>644</StateNumber>
       <TypeId>790</TypeId>
     </column>
-    <column id="311" parent="269" name="name">
+    <column id="318" parent="270" name="name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>689</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="312" parent="269" name="description">
+    <column id="319" parent="270" name="description">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>692</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="313" parent="269" name="start_time">
+    <column id="320" parent="270" name="start_time">
       <DataType>timestamp with time zone|0s</DataType>
       <Position>5</Position>
       <StateNumber>695</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="314" parent="269" name="entry_deadline">
+    <column id="321" parent="270" name="entry_deadline">
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StateNumber>698</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="315" parent="269" name="organizer">
+    <column id="322" parent="270" name="organizer">
       <DataType>integer|0s</DataType>
       <Position>7</Position>
       <StateNumber>701</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="316" parent="269" name="ranking_level">
+    <column id="323" parent="270" name="ranking_level">
       <DataType>integer|0s</DataType>
       <Position>8</Position>
       <StateNumber>711</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="317" parent="269" name="event_organizer_fk">
+    <foreign-key id="324" parent="270" name="event_organizer_fk">
       <ColNames>organizer</ColNames>
       <ObjectId>17008</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4708,7 +4760,7 @@ team</ColNames>
       <RefTableName>user</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="318" parent="269" name="event_pkey">
+    <index id="325" parent="270" name="event_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16587</ObjectId>
@@ -4717,14 +4769,14 @@ team</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="319" parent="269" name="event_pkey">
+    <key id="326" parent="270" name="event_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16588</ObjectId>
       <Primary>1</Primary>
       <StateNumber>559</StateNumber>
       <UnderlyingIndexId>16587</UnderlyingIndexId>
     </key>
-    <check id="320" parent="270" name="check_match_is_team">
+    <check id="327" parent="271" name="check_match_is_team">
       <ColNames>is_team
 team_one
 team_two
@@ -4734,7 +4786,7 @@ player_two</ColNames>
       <Predicate>(is_team AND ((team_one IS NOT NULL) AND (team_two IS NOT NULL))) OR ((NOT is_team) AND ((player_one IS NOT NULL) AND (player_two IS NOT NULL)))</Predicate>
       <StateNumber>609</StateNumber>
     </check>
-    <column id="321" parent="270" name="number">
+    <column id="328" parent="271" name="number">
       <DataType>smallint|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4742,83 +4794,83 @@ player_two</ColNames>
       <StateNumber>609</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="322" parent="270" name="round">
+    <column id="329" parent="271" name="round">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="323" parent="270" name="competition">
+    <column id="330" parent="271" name="competition">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="324" parent="270" name="event">
+    <column id="331" parent="271" name="event">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="325" parent="270" name="is_team">
+    <column id="332" parent="271" name="is_team">
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>609</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <column id="326" parent="270" name="start_time">
+    <column id="333" parent="271" name="start_time">
       <DataType>timestamp with time zone|0s</DataType>
       <Position>6</Position>
       <StateNumber>609</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="327" parent="270" name="finish_time">
+    <column id="334" parent="271" name="finish_time">
       <DataType>timestamp with time zone|0s</DataType>
       <Position>7</Position>
       <StateNumber>609</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <column id="328" parent="270" name="score_one">
+    <column id="335" parent="271" name="score_one">
       <DataType>integer|0s</DataType>
       <Position>8</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="329" parent="270" name="score_two">
+    <column id="336" parent="271" name="score_two">
       <DataType>integer|0s</DataType>
       <Position>9</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="330" parent="270" name="player_one">
+    <column id="337" parent="271" name="player_one">
       <DataType>integer|0s</DataType>
       <Position>10</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="331" parent="270" name="player_two">
+    <column id="338" parent="271" name="player_two">
       <DataType>integer|0s</DataType>
       <Position>11</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="332" parent="270" name="team_one">
+    <column id="339" parent="271" name="team_one">
       <DataType>integer|0s</DataType>
       <Position>12</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="333" parent="270" name="team_two">
+    <column id="340" parent="271" name="team_two">
       <DataType>integer|0s</DataType>
       <Position>13</Position>
       <StateNumber>609</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="334" parent="270" name="sets">
+    <column id="341" parent="271" name="sets">
       <DataType>integer[]|0s</DataType>
       <DefaultExpression>&apos;{}&apos;::integer[]</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4826,7 +4878,7 @@ player_two</ColNames>
       <StateNumber>609</StateNumber>
       <TypeId>1007</TypeId>
     </column>
-    <foreign-key id="335" parent="270" name="match_round_fk">
+    <foreign-key id="342" parent="271" name="match_round_fk">
       <ColNames>round</ColNames>
       <ObjectId>16878</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4836,7 +4888,7 @@ player_two</ColNames>
       <RefTableName>round</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="336" parent="270" name="round_competition_fk">
+    <foreign-key id="343" parent="271" name="round_competition_fk">
       <ColNames>competition</ColNames>
       <ObjectId>16883</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4846,7 +4898,7 @@ player_two</ColNames>
       <RefTableName>competition</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="337" parent="270" name="round_event_fk">
+    <foreign-key id="344" parent="271" name="round_event_fk">
       <ColNames>event</ColNames>
       <ObjectId>16888</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4856,7 +4908,7 @@ player_two</ColNames>
       <RefTableName>event</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="338" parent="270" name="match_player_one_fk">
+    <foreign-key id="345" parent="271" name="match_player_one_fk">
       <ColNames>player_one</ColNames>
       <ObjectId>16893</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4866,7 +4918,7 @@ player_two</ColNames>
       <RefTableName>player</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="339" parent="270" name="match_player_two_fk">
+    <foreign-key id="346" parent="271" name="match_player_two_fk">
       <ColNames>player_two</ColNames>
       <ObjectId>16898</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4876,7 +4928,7 @@ player_two</ColNames>
       <RefTableName>player</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="340" parent="270" name="match_team_one_fk">
+    <foreign-key id="347" parent="271" name="match_team_one_fk">
       <ColNames>team_one</ColNames>
       <ObjectId>16903</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4886,7 +4938,7 @@ player_two</ColNames>
       <RefTableName>team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="341" parent="270" name="match_team_two_fk">
+    <foreign-key id="348" parent="271" name="match_team_two_fk">
       <ColNames>team_two</ColNames>
       <ObjectId>16908</ObjectId>
       <RefColNames>id</RefColNames>
@@ -4896,7 +4948,7 @@ player_two</ColNames>
       <RefTableName>team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="342" parent="270" name="match_pk">
+    <index id="349" parent="271" name="match_pk">
       <ColNames>round
 number</ColNames>
       <ObjectId>16876</ObjectId>
@@ -4905,13 +4957,13 @@ number</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="343" parent="270" name="match_pk">
+    <key id="350" parent="271" name="match_pk">
       <ObjectId>16877</ObjectId>
       <Primary>1</Primary>
       <StateNumber>609</StateNumber>
       <UnderlyingIndexId>16876</UnderlyingIndexId>
     </key>
-    <column id="344" parent="271" name="id">
+    <column id="351" parent="272" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -4919,32 +4971,32 @@ number</ColNames>
       <StateNumber>502</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="345" parent="271" name="name">
+    <column id="352" parent="272" name="name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>716</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="346" parent="271" name="gender">
+    <column id="353" parent="272" name="gender">
       <DataType>gender|0s</DataType>
       <Position>3</Position>
       <StateNumber>752</StateNumber>
       <TypeId>16402</TypeId>
     </column>
-    <column id="347" parent="271" name="dob">
+    <column id="354" parent="272" name="dob">
       <DataType>date|0s</DataType>
       <Position>4</Position>
       <StateNumber>755</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="348" parent="271" name="ranking">
+    <column id="355" parent="272" name="ranking">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
       <StateNumber>758</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="349" parent="271" name="player_pkey">
+    <index id="356" parent="272" name="player_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16441</ObjectId>
@@ -4953,20 +5005,20 @@ number</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="350" parent="271" name="player_pkey">
+    <key id="357" parent="272" name="player_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16442</ObjectId>
       <Primary>1</Primary>
       <StateNumber>502</StateNumber>
       <UnderlyingIndexId>16441</UnderlyingIndexId>
     </key>
-    <check id="351" parent="272" name="round_number_check">
+    <check id="358" parent="273" name="round_number_check">
       <ColNames>number</ColNames>
       <ObjectId>16595</ObjectId>
       <Predicate>(number &gt;= 1) AND (number &lt; 256)</Predicate>
       <StateNumber>561</StateNumber>
     </check>
-    <column id="352" parent="272" name="id">
+    <column id="359" parent="273" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -4974,7 +5026,7 @@ number</ColNames>
       <StateNumber>561</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="353" parent="272" name="number">
+    <column id="360" parent="273" name="number">
       <DataType>smallint|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
       <NotNull>1</NotNull>
@@ -4982,25 +5034,25 @@ number</ColNames>
       <StateNumber>561</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="354" parent="272" name="competition">
+    <column id="361" parent="273" name="competition">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>561</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="355" parent="272" name="event">
+    <column id="362" parent="273" name="event">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>561</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="356" parent="272" name="name">
+    <column id="363" parent="273" name="name">
       <DataType>text|0s</DataType>
       <Position>5</Position>
       <StateNumber>567</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <foreign-key id="357" parent="272" name="round_competition_fk">
+    <foreign-key id="364" parent="273" name="round_competition_fk">
       <ColNames>competition</ColNames>
       <ObjectId>16598</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5010,7 +5062,7 @@ number</ColNames>
       <RefTableName>competition</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="358" parent="272" name="round_event_fk">
+    <foreign-key id="365" parent="273" name="round_event_fk">
       <ColNames>event</ColNames>
       <ObjectId>16603</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5020,7 +5072,7 @@ number</ColNames>
       <RefTableName>event</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="359" parent="272" name="round_pkey">
+    <index id="366" parent="273" name="round_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16596</ObjectId>
@@ -5029,14 +5081,14 @@ number</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="360" parent="272" name="round_pkey">
+    <key id="367" parent="273" name="round_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16597</ObjectId>
       <Primary>1</Primary>
       <StateNumber>561</StateNumber>
       <UnderlyingIndexId>16596</UnderlyingIndexId>
     </key>
-    <column id="361" parent="273" name="id">
+    <column id="368" parent="274" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -5044,25 +5096,25 @@ number</ColNames>
       <StateNumber>532</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="362" parent="273" name="name">
+    <column id="369" parent="274" name="name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
       <StateNumber>624</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="363" parent="273" name="description">
+    <column id="370" parent="274" name="description">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>630</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="364" parent="273" name="club">
+    <column id="371" parent="274" name="club">
       <DataType>integer|0s</DataType>
       <Position>4</Position>
       <StateNumber>633</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="365" parent="273" name="team_club_fk">
+    <foreign-key id="372" parent="274" name="team_club_fk">
       <ColNames>club</ColNames>
       <ObjectId>16949</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5072,7 +5124,7 @@ number</ColNames>
       <RefTableName>club</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="366" parent="273" name="team_pkey">
+    <index id="373" parent="274" name="team_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16516</ObjectId>
@@ -5081,28 +5133,28 @@ number</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="367" parent="273" name="team_pkey">
+    <key id="374" parent="274" name="team_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16517</ObjectId>
       <Primary>1</Primary>
       <StateNumber>532</StateNumber>
       <UnderlyingIndexId>16516</UnderlyingIndexId>
     </key>
-    <column id="368" parent="274" name="team">
+    <column id="375" parent="275" name="team">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>619</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="369" parent="274" name="player">
+    <column id="376" parent="275" name="player">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>619</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="370" parent="274" name="is_captain">
+    <column id="377" parent="275" name="is_captain">
       <DataType>boolean|0s</DataType>
       <DefaultExpression>false</DefaultExpression>
       <NotNull>1</NotNull>
@@ -5110,7 +5162,7 @@ number</ColNames>
       <StateNumber>619</StateNumber>
       <TypeId>16</TypeId>
     </column>
-    <foreign-key id="371" parent="274" name="team_player_team_id_fkey">
+    <foreign-key id="378" parent="275" name="team_player_team_id_fkey">
       <ColNames>team</ColNames>
       <ObjectId>16936</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5120,7 +5172,7 @@ number</ColNames>
       <RefTableName>team</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="372" parent="274" name="team_player_player_id_fkey">
+    <foreign-key id="379" parent="275" name="team_player_player_id_fkey">
       <ColNames>player</ColNames>
       <ObjectId>16941</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5130,7 +5182,7 @@ number</ColNames>
       <RefTableName>player</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="373" parent="274" name="team_player_pkey">
+    <index id="380" parent="275" name="team_player_pkey">
       <ColNames>team
 player</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -5140,14 +5192,14 @@ player</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="374" parent="274" name="team_player_pkey">
+    <key id="381" parent="275" name="team_player_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16935</ObjectId>
       <Primary>1</Primary>
       <StateNumber>619</StateNumber>
       <UnderlyingIndexId>16934</UnderlyingIndexId>
     </key>
-    <column id="375" parent="275" name="id">
+    <column id="382" parent="276" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -5155,13 +5207,13 @@ player</ColNames>
       <StateNumber>501</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="376" parent="275" name="player">
+    <column id="383" parent="276" name="player">
       <DataType>integer|0s</DataType>
       <Position>2</Position>
       <StateNumber>767</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="377" parent="275" name="user_player_fk">
+    <foreign-key id="384" parent="276" name="user_player_fk">
       <ColNames>player</ColNames>
       <ObjectId>17032</ObjectId>
       <RefColNames>id</RefColNames>
@@ -5171,7 +5223,7 @@ player</ColNames>
       <RefTableName>player</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="378" parent="275" name="user_pkey">
+    <index id="385" parent="276" name="user_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16434</ObjectId>
@@ -5180,14 +5232,14 @@ player</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="379" parent="275" name="user_pkey">
+    <key id="386" parent="276" name="user_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16435</ObjectId>
       <Primary>1</Primary>
       <StateNumber>501</StateNumber>
       <UnderlyingIndexId>16434</UnderlyingIndexId>
     </key>
-    <column id="380" parent="276" name="id">
+    <column id="387" parent="277" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>always</IdentityKind>
       <NotNull>1</NotNull>
@@ -5195,32 +5247,32 @@ player</ColNames>
       <StateNumber>494</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="381" parent="276" name="name">
+    <column id="388" parent="277" name="name">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>731</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="382" parent="276" name="description">
+    <column id="389" parent="277" name="description">
       <DataType>text|0s</DataType>
       <Position>3</Position>
       <StateNumber>735</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <column id="383" parent="276" name="location">
+    <column id="390" parent="277" name="location">
       <DataType>point|0s</DataType>
       <Position>4</Position>
       <StateNumber>738</StateNumber>
       <TypeId>600</TypeId>
     </column>
-    <column id="384" parent="276" name="phone">
+    <column id="391" parent="277" name="phone">
       <DataType>text|0s</DataType>
       <Position>5</Position>
       <StateNumber>741</StateNumber>
       <TypeId>25</TypeId>
     </column>
-    <index id="385" parent="276" name="venue_pkey">
+    <index id="392" parent="277" name="venue_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16394</ObjectId>
@@ -5229,7 +5281,7 @@ player</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="386" parent="276" name="venue_pkey">
+    <key id="393" parent="277" name="venue_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16395</ObjectId>
       <Primary>1</Primary>

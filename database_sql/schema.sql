@@ -95,7 +95,8 @@ create table competition
     event              integer
         constraint competition_event_fk
             references event,
-    rank_restriction   integer
+    rank_restriction   integer,
+    entry_limit        integer            default 0                       not null
 );
 
 create table round
@@ -167,19 +168,55 @@ create table team_player
 
 create table competition_entry
 (
-    competition integer not null
+    competition  integer               not null
         constraint competition_entry_competition_id_fkey
             references competition,
-    player      integer not null
+    player       integer
         constraint competition_entry_player_id_fkey
             references player,
-    team        integer not null
+    team         integer
         constraint competition_entry_team_id_fkey
             references team,
-    is_team     boolean not null,
-    paid_time   timestamp with time zone,
+    is_team      boolean               not null,
+    paid_time    timestamp with time zone,
+    entry_number integer default 0     not null,
+    withdrawn    boolean default false not null,
     constraint competition_entry_pkey
-        primary key (competition, player, team),
+        primary key (competition, entry_number),
     constraint participants_is_team
-        check ((is_team AND (team IS NOT NULL)) OR ((NOT is_team) AND (player IS NOT NULL)))
+        check ((is_team AND ((team IS NOT NULL) AND (player IS NULL))) OR
+               ((NOT is_team) AND ((player IS NOT NULL) AND (team IS NULL))))
 );
+
+create unique index competition_entry_unique_entry_idx
+    on competition_entry (competition, COALESCE(player, '-1'::integer), COALESCE(team, '-1'::integer));
+
+create or replace function competition_entry_insert_trigger_fn() returns trigger
+    language plpgsql
+as
+$$
+DECLARE
+    entry_limit integer;
+    current_entry_count integer;
+BEGIN
+    SELECT competition.entry_limit INTO entry_limit
+    FROM competition where NEW.competition = competition.id;
+    SELECT count(*) INTO current_entry_count
+    FROM competition_entry WHERE competition = NEW.competition and withdrawn = false;
+
+    IF (entry_limit > 0 AND current_entry_count >= entry_limit) THEN
+        RAISE EXCEPTION 'Competition entry limit reached';
+    ELSE
+        NEW.entry_number = current_entry_count + 1;
+    END IF;
+
+    RETURN NEW;
+END;
+$$;
+
+create trigger competition_entry_insert_trigger
+    before insert
+    on competition_entry
+    for each row
+execute procedure competition_entry_insert_trigger_fn();
+
