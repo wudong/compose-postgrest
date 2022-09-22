@@ -61,7 +61,8 @@ create table team
     description integer,
     club        integer
         constraint team_club_fk
-            references club
+            references club,
+    is_double   boolean default false not null
 );
 
 create table event
@@ -72,12 +73,15 @@ create table event
     fee            money default 0          not null,
     name           text                     not null,
     description    text                     not null,
-    start_time     timestamp with time zone,
     entry_deadline timestamp with time zone not null,
     organizer      integer
         constraint event_organizer_fk
             references "user",
-    ranking_level  integer
+    ranking_level  integer,
+    start_date     date,
+    venue          integer
+        constraint event_venue_fk
+            references venue
 );
 
 create table competition
@@ -96,7 +100,8 @@ create table competition
         constraint competition_event_fk
             references event,
     rank_restriction   integer,
-    entry_limit        integer            default 0                       not null
+    entry_limit        integer            default 0                       not null,
+    start_time         date                                               not null
 );
 
 create table round
@@ -118,36 +123,41 @@ create table round
 
 create table match
 (
-    number      smallint  default 1               not null,
-    round       integer                           not null
+    number            smallint  default 1               not null,
+    round             integer                           not null
         constraint match_round_fk
             references round,
-    competition integer                           not null
+    competition       integer                           not null
         constraint round_competition_fk
             references competition,
-    event       integer                           not null
+    event             integer                           not null
         constraint round_event_fk
             references event,
-    is_team     boolean                           not null,
-    start_time  timestamp with time zone,
-    finish_time timestamp with time zone,
-    score_one   integer,
-    score_two   integer,
-    player_one  integer
+    is_team           boolean                           not null,
+    start_time        timestamp with time zone,
+    finish_time       timestamp with time zone,
+    score_one         integer,
+    score_two         integer,
+    player_one        integer
         constraint match_player_one_fk
             references player,
-    player_two  integer
+    player_two        integer
         constraint match_player_two_fk
             references player,
-    team_one    integer
+    team_one          integer
         constraint match_team_one_fk
             references team,
-    team_two    integer
+    team_two          integer
         constraint match_team_two_fk
             references team,
-    sets        integer[] default '{}'::integer[] not null,
+    sets              integer[] default '{}'::integer[] not null,
+    competition_type  competition_type,
+    team_match_number integer,
+    referee           integer,
     constraint match_pk
         primary key (round, number),
+    constraint team_match_number_fk
+        foreign key (round, team_match_number) references match,
     constraint check_match_is_team
         check ((is_team AND ((team_one IS NOT NULL) AND (team_two IS NOT NULL))) OR
                ((NOT is_team) AND ((player_one IS NOT NULL) AND (player_two IS NOT NULL))))
