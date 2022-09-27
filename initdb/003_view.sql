@@ -1,0 +1,9 @@
+-- create view all_events as
+-- select e.*,
+--        row(o.*) as organizers,
+--        row(v.*) as venues,
+--        row(es.*) as event_seriess
+--        from events e
+--                                    left join users o on (e.organizer = o.id)
+--                                    left join venues v on (e.venue = v.id)
+--                                    left join event_series es on (e.event_serial = es.id);
