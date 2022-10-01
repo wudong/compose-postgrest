@@ -6,8 +6,12 @@ create type competition_type as enum ('single', 'double', 'team');
 
 create type age_restriction as enum ('open', 'u11', 'u13', 'u15', 'u17', 'u19', 'u21', 'o40', 'o50', 'o60', 'o70', 'o80');
 
+create type match_result as enum ('win', 'lose', 'draw', 'pending');
+
+-- consolidation matches? how to handle?
+create type competition_result as enum ('group', 'last128', 'last64', 'last32', 'last16','quarter', 'semi', 'final', 'winner');
+
 create type competition_status as enum ('open', 'closed', 'cancelled');
-create type competition_result as enum ('win', 'lose', 'draw', 'pending');
 
 create type user_role as enum ( 'system_admin', 'event_admin','venue_admin', 'club_admin', 'player', 'referee', 'coach' );
 
