@@ -9,7 +9,7 @@ create type age_restriction as enum ('open', 'u11', 'u13', 'u15', 'u17', 'u19', 
 create type match_result as enum ('win', 'lose', 'draw', 'pending');
 
 -- consolidation matches? how to handle?
-create type competition_result as enum ('group', 'last128', 'last64', 'last32', 'last16','quarter', 'semi', 'final', 'winner');
+create type competition_result as enum ('entered','group', 'last128', 'last64', 'last32', 'last16','quarter', 'semi', 'final', 'winner');
 
 create type competition_status as enum ('open', 'closed', 'cancelled');
 
