@@ -20,6 +20,8 @@ BEGIN
         RAISE EXCEPTION 'Competition entry limit reached';
     ELSE
         NEW.entry_number = current_entry_count + 1;
+        update competitions set current_entries = current_entry_count + 1
+        where NEW.competition = competitions.id;
     END IF;
 
     RETURN NEW;
