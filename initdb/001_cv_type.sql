@@ -36,5 +36,9 @@ values ('event', 'boys'),
        ('event', 'single'),
        ('event', 'double'),
        ('event', 'mix double'),
-       ('event', 'team')
+       ('event', 'team'),
+       ('player', 'right-handled'),
+       ('player', 'left-handled'),
+       ('player', 'attaching'),
+       ('player', 'defending')
 ON CONFLICT ON CONSTRAINT tag_pkey do nothing;
