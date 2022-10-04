@@ -6,9 +6,13 @@ create table players
             primary key,
     name    text    not null,
     gender  gender  not null,
-    dob     date,
+    dob     date    not null,
     ranking integer not null default 0,
-    tags    text[] not null default '{}'::text[]
+    tags    text[]  not null default '{}'::text[],
+    registered_user integer not null
+        constraint player_user_id_fkey
+            references users,
+    constraint player_name_dob_unique unique (name, dob)
 );
 
 -- a user of the system,
@@ -19,6 +23,9 @@ create table users
             primary key,
     name   text                     not null,
     roles  user_role[] default '{}' not null,
+    verified boolean                not null default false,
+    email  text,
+    phone  text,
     player integer
         constraint user_player_fk
             references players
