@@ -16,23 +16,24 @@ BEGIN
 
     -- if it is a single entry, make sure it is not entered again.
     if v_competition.type <> 'single' then
-        select count(*) into v_exist_entry_count from competition_entries join players p on competition_entries.player = p.id;
+        select count(competition_entries.player) into v_exist_entry_count from competition_entries where competition_entries.player = NEW.player;
         if v_exist_entry_count > 0 then
-            raise exception 'Player has already entered into the competition';
+            raise exception 'Player (%) has already entered into the competition', new.player;
         end if;
     end if;
 
     -- if it is team entry, make sure it does not exist in other team already.
     if v_competition.type <> 'single' then
-        select count(*) into v_exist_entry_count from competition_entries
+        select count(tp.player) into v_exist_entry_count from competition_entries
             join teams t on competition_entries.team = t.id
             join team_players tp on t.id = tp.team
-            where tp.player = any(
+            where competition_entries.competition = NEW.competition
+            and tp.player = any(
                 select tp2.player from teams t2 join team_players tp2 on t2.id = tp2.team
                     where t2.id = new.team
            );
         if v_exist_entry_count > 0 then
-            raise exception 'Player has already entered into the competition in other team/doubles';
+            raise exception 'Team (%) has player has already entered into the competition in other team/doubles', NEW.team;
         end if;
     end if;
 
