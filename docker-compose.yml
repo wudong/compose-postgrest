@@ -5,8 +5,8 @@ services:
   ################
   # postgrest-db #
   ################
-  postgrest-db:
-    container_name: postgrest-db
+  postgres:
+    container_name: postgres
     # image: postgres:13-alpine
     image: galien0xffffff/postgres-debugger:14
     ports:
@@ -52,7 +52,7 @@ services:
     environment:
       # The standard connection URI format, documented at
       # https://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING
-      - PGRST_DB_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgrest-db:5432/${POSTGRES_DB}
+      - PGRST_DB_URI=postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
       # The name of which database schema to expose to REST clients
       - PGRST_DB_SCHEMA=${DB_SCHEMA}
       # The database role to use when no client authentication is provided
@@ -62,6 +62,8 @@ services:
     networks:
       - postgrest-backend
     restart: always
+    depends_on:
+      - postgres
 
   ##############
   # swagger-ui #
@@ -88,6 +90,28 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PG_ADMIN_PASSWORD}
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:18.0
+    container_name: keycloak
+    command: "start-dev"
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: ${POSTGRES_USER}
+      DB_SCHEMA: public
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
+      #JDBC_PARAMS: "ssl=true"
+    ports:
+      - "9998:8080"
+    depends_on:
+      - postgres
+    networks:
+      - postgrest-backend
 
 networks:
   postgrest-backend:
