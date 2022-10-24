@@ -8,13 +8,14 @@ create or replace function get_team_by_players(v_players integer[], v_is_double 
             id      integer,
             gender  gender_restriction,
             ranking integer,
+            is_double boolean,
             players players[]
         )
     language sql
     IMMUTABLE
 as
 $$
-select t.id, t.gender, t.ranking, array_agg(p) as players
+select t.id, t.gender, t.ranking, t.is_double, array_agg(p) as players
 from teams t
          join team_players tp on t.id = tp.team
          join players p on tp.player = p.id
@@ -58,10 +59,11 @@ begin
     end if;
 
     -- verify all player_id exists.
-    select array_length(array_agg(id), 1) into v_all_player_exists from players where id = any(v_players);
-    if v_all_player_exists <> array_length(v_players, 1) then
-        raise exception 'some player_id not exists';
-    end if;
+    -- this is actually not needed cause it would failed the foreigh key.
+--     select array_length(array_agg(id), 1) into v_all_player_exists from players where id = any(v_players);
+--     if v_all_player_exists <> array_length(v_players, 1) then
+--         raise exception 'some player_id not exists';
+--     end if;
 
     select id into v_team_id from get_team_by_players(v_players, v_is_double);
 
