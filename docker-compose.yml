@@ -58,7 +58,7 @@ services:
       # The database role to use when no client authentication is provided
       - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE}
       # Overrides the base URL used within the OpenAPI self-documentation hosted at the API root path
-      - PGRST_OPENAPI_SERVER_PROXY_URI=${HOST}/api
+      - PGRST_OPENAPI_SERVER_PROXY_URI=https://${DOMAIN}/api
     restart: always
     depends_on:
       - postgres
@@ -69,7 +69,7 @@ services:
     # ports:
     #  - "8080:8080"
     environment:
-      - API_URL=${HOST}/api
+      - API_URL=https://${DOMAIN}/api
     restart: always
 
   pgadmin:
@@ -85,9 +85,9 @@ services:
       - pgadmin-data:/var/lib/pgadmin
 
   keycloak:
-    image: quay.io/keycloak/keycloak:18.0
+    image: quay.io/keycloak/keycloak:19.0.3
     container_name: keycloak
-    command: "start-dev"
+    command: "start-dev --import-realm --features-disabled=admin2 --proxy edge --hostname-url=https://${DOMAIN}/auth --hostname-admin-url=https://${DOMAIN}/auth"
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
@@ -97,13 +97,10 @@ services:
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
-      # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
-      #JDBC_PARAMS: "ssl=true"
-    # ports:
-    #  - "9998:8080"
     depends_on:
       - postgres
-
+    volumes:
+      - ./config/keycloak/import:/opt/keycloak/data/import
 
 volumes:
   pgdata:
