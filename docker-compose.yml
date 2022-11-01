@@ -18,7 +18,7 @@ services:
       # anything in initdb directory is created in the database
       # see "How to extend this image" section at https://hub.docker.com/r/_/postgres/
       - "./initdb:/docker-entrypoint-initdb.d"
-      # - ./pgdata:/var/lib/postgresql/data
+      - "./pgdata:/var/lib/postgresql/data"
     restart: always
 
   nginx:
@@ -58,12 +58,15 @@ services:
       # The database role to use when no client authentication is provided
       - PGRST_DB_ANON_ROLE=${DB_ANON_ROLE}
       # Overrides the base URL used within the OpenAPI self-documentation hosted at the API root path
+      - PGRST_LOG_LEVEL=info
       - PGRST_OPENAPI_SERVER_PROXY_URI=https://${DOMAIN}/api
-      - PGRST_JWT_SECRET=${JWT_SECRET}
+      - PGRST_JWT_SECRET=@/run/secrets/jwt_secret
       - PGRST_ROLE_CLAIM_KEY=.resource_access.frontend.roles[0]
     restart: always
     depends_on:
       - postgres
+    volumes:
+      - ./config/postgrest/keys.json:/run/secrets/jwt_secret
 
   swagger-ui:
     container_name: swagger-ui
@@ -106,6 +109,6 @@ services:
 
 volumes:
   pgdata:
-#    external: true
+    external: true
   pgadmin-data:
      external: true

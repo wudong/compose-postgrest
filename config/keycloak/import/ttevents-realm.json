@@ -677,7 +677,8 @@
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
-        "https://tt.graceliu.uk/"
+        "https://tt.graceliu.uk/",
+        "https://tt.graceliu.uk/silent-check-sso.html"
       ],
       "webOrigins": [],
       "notBefore": 0,

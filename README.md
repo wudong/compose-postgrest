@@ -45,8 +45,15 @@ Notice the ending slash in the proxy_pass. It is important.
 use server `host.docker.internal` to access the host port from docker container.;
 Note this only works on Docker Desktop not in production environment.
 
+
 # export keycloak realm and user.
 
 ```
 /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --users realm_file --realm ttevents
+```
+
+# export keycloak realm public keys to postgrest
+
+```
+curl -o ./config/postgrest/keys.json https://tt.graceliu.uk/auth/realms/ttevents/protocol/openid-connect/certs
 ```
