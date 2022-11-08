@@ -79,4 +79,40 @@ begin
     end if;
     return v_team_id;
 end
+$$;
+
+
+create type user_with_player as
+    (
+    "user" users,
+    player players
+    );
+-- get or create user after the user login.
+-- we use email from jwt token to associate the user.
+drop function if exists get_or_create_user;
+create or replace function get_or_create_user() returns user_with_player
+    language plpgsql
+as
 $$
+declare
+    v_email text;
+    v_user user_with_player;
+    vv_user users;
+begin
+    SELECT current_setting('request.jwt.claims', true)::json->>'email' into v_email;
+
+    if v_email is NULL then
+        raise exception 'email not found in jwt token';
+    end if;
+
+    select row(u.*) as "user", row(p.*) as player into v_user from users u
+        join players p on u.player = p.id
+        where u.email = v_email;
+    if found then
+        return v_user;
+    else
+        insert into users (email) values (v_email) returning * into vv_user;
+        return (v_user, null);
+    end if;
+end
+$$;

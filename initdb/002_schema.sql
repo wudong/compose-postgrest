@@ -21,12 +21,16 @@ create table users
     name   text                     not null,
     roles  user_role[] default '{}' not null,
     verified boolean                not null default false,
-    email  text,
+    email  text                     not null,
     phone  text,
-    player integer
+    photoURL text,
+    settings jsonb                 not null default '{}'::jsonb,
+    player integer unique
         constraint user_player_fk
             references players
 );
+
+CREATE UNIQUE INDEX idx_email_lower_unique ON users (lower(email));
 
 alter table players
     add column registered_user integer

@@ -9,12 +9,12 @@ values (1, 'Wudong Liu', 'male', '1978-10-13' ),
        (8, 'Chester Chung', 'male', '1984-04-04')
 ON CONFLICT ON CONSTRAINT player_pkey do nothing;
 
-insert into users (id, name, roles, player)
-values (0, 'wtt', '{ event_admin }', null),
-       (1, 'Wudong Liu', '{ system_admin, player }', 1),
-       (2, 'Yi Zhou', '{ system_admin, player }', 2),
-       (3, 'Grace Liu', '{ player }', 3),
-       (4, 'Helen Yue Pan', '{ player }', 4)
+insert into users (id, name, roles, player, email)
+values (0, 'wtt', '{ event_admin }', null, "wtt@gmail.com"),
+       (1, 'Wudong Liu', '{ system_admin, player }', 1, "wudong.liu@gmail.com"),
+       (2, 'Yi Zhou', '{ system_admin, player }', 2, "yizhou@gmail.com"),
+       (3, 'Grace Liu', '{ player }', 3, "graceyuansiliu@gmail.com"),
+       (4, 'Helen Yue Pan', '{ player }', 4, "helen.yue.pan@gmail.com")
 ON CONFLICT ON CONSTRAINT user_pkey do nothing;
 
 insert into venues (id, name, description, address, city, province, country, postcode, location, phone,
