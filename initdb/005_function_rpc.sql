@@ -98,8 +98,11 @@ declare
     v_email text;
     v_user user_with_player;
     vv_user users;
+    vv_player players;
+    v_name text;
 begin
     SELECT current_setting('request.jwt.claims', true)::json->>'email' into v_email;
+    SELECT current_setting('request.jwt.claims', true)::json->>'name' into v_name;
 
     if v_email is NULL then
         raise exception 'email not found in jwt token';
@@ -111,8 +114,12 @@ begin
     if found then
         return v_user;
     else
-        insert into users (email) values (v_email) returning * into vv_user;
-        return (v_user, null);
+        -- create user and its player.
+        insert into users (email, name) values (v_email, v_name) returning * into vv_user;
+        insert into players (name, registered_user)
+                 values (v_name, vv_user.id ) returning * into vv_player;
+        update users set player = vv_player.id where id = vv_user.id;
+        return (v_user, vv_player);
     end if;
 end
 $$;
