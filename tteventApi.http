@@ -1,0 +1,8 @@
+###
+
+GET https://tt.graceliu.uk:443/api/player_competition_entries?player_id=eq.1
+accept: application/json
+Range-Unit: items
+
+###
+

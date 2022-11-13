@@ -8,6 +8,7 @@ create table players
     gender  gender  not null,
     dob     date    not null,
     ranking integer not null default 0,
+
     tags    text[]  not null default '{}'::text[],
     constraint player_name_dob_unique unique (name, dob)
 );

@@ -77,6 +77,8 @@ services:
     environment:
       - API_URL=https://${DOMAIN}/api
     restart: always
+    depends_on:
+      - postgrest
 
   pgadmin:
     image: dpage/pgadmin4
