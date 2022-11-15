@@ -1,4 +1,4 @@
-create view api.player_competition_entries as
+create view player_competition_entries as
 select p.id as player_id, ce.*, c.name as competition_name, e.name as event_name, e.start_date as event_date, e.id as event
 from competition_entries ce, competitions c, events e, players p
 where c.id = ce.competition and c.event = e.id and

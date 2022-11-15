@@ -18,7 +18,7 @@ services:
       # anything in initdb directory is created in the database
       # see "How to extend this image" section at https://hub.docker.com/r/_/postgres/
       - "./initdb:/docker-entrypoint-initdb.d"
-      - "./pgdata:/var/lib/postgresql/data"
+      # - "./pgdata:/var/lib/postgresql/data"
     restart: always
 
   nginx:
